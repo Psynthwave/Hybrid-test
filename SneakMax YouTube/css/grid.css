@@ -1,0 +1,214 @@
+@font-face {
+  font-family: 'Intro';
+  src: url('../fonts/Intro-Book.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'Muller', 'OpenSans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  font-family: 'Intro';
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+:root {
+  --accent: #f14f4f;
+  --text: #444b58;
+  --gray: #b2b5bb;
+}
+
+.grid {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  display: grid;
+  grid-template-columns: 520px 430px;
+  grid-template-rows: 462px 76px 130px;
+  gap: 20px;
+}
+
+.product__article {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 37px;
+  }
+  
+  .product__article-number {
+    margin-right: 50px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--gray);
+  }
+  
+  .product__article-text {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--gray);
+  }
+  
+  .product__article-text span {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text);
+  }
+  
+  .product__heading {
+    margin-bottom: 23px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    color: var(--text);
+  }
+  
+  .product__rate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 17px;
+    width: 116px;
+  }
+  
+  .product__size-choosing {
+    margin-bottom: 19px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text);
+  }
+  
+  .product__size {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+  
+  .size-btn {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    padding: 10px 26px;
+    width: 70px;
+    height: 32px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text);
+  }
+  
+  .product__price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 81px;
+  }
+  
+  .product__price-actual {
+    margin-right: 50px;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--text);
+  }
+  
+  .product__price-old {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--gray);
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    padding: 22px 47px;
+    width: 430px;
+    height: 60px;
+    background: var(--accent);
+  }
+
+  .product__colors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .product__advantages-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .product__advantages-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  
+  .check-icon {
+    margin-right: 10px;
+  }
+  
+  .product__advantages-text {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray);
+  }
+
+  .product__overview-heading {
+    margin-bottom: 18px;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--text);
+  }
+  
+  .product__overview-text {
+    max-width: 430px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--text);
+  }
+
+  .product__characters-heading {
+    margin-bottom: 17px;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--text);
+  }
+  
+  .product__characters-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  
+  .product__characters-text {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text);
+  }
