@@ -1,0 +1,446 @@
+@font-face {
+  font-family: 'TT Wellingtons';
+  src: url('../fonts/TTWellingtons-Black.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  --font-family: 'TT Wellingtons', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'TTWellingtons';
+}
+
+.game-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  height: 480px;
+  background-color: #ffd749;
+  overflow: hidden;
+}
+
+.game-counter {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+  animation: fade-in 0.7s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.game-counter__text {
+  margin-right: 13px;
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  color: #444;
+}
+
+.game-counter__meaning {
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: 30px;
+  text-align: center;
+  color: #f8a4a4;
+  text-shadow: 1px 1px 0 #454444, -1px 1px 0 #454444, -1px -1px 0 #454444,
+    1px -1px 0 #454444;
+}
+
+.game-items {
+  position: relative;
+  width: 278.67px;
+  height: 194.96px;
+}
+
+.nintendo-img {
+  position: absolute;
+  display: block;
+  top: 13px;
+  left: 19px;
+  width: 126px;
+  height: 58px;
+  background-image: url('../img/nintendo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  animation: bounce-in-nintendo 1s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.nintendo-img:hover {
+  cursor: pointer;
+}
+
+.pencil-img {
+  position: absolute;
+  display: block;
+  top: -16px;
+  left: 190px;
+  width: 58px;
+  height: 94px;
+  background-image: url('../img/pencil.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  animation: bounce-in-pencil 1s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.pencil-img:hover {
+  cursor: pointer;
+}
+
+.usb-img {
+  position: absolute;
+  display: block;
+  top: 74px;
+  left: 51px;
+  width: 62px;
+  height: 88px;
+  background-image: url('../img/usb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  animation: bounce-in-usb 1s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.usb-img:hover {
+  cursor: pointer;
+}
+
+.notebook-img {
+  position: absolute;
+  display: block;
+  top: 85px;
+  left: 185px;
+  width: 80px;
+  height: 94px;
+  background-image: url('../img/notebook.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  animation: bounce-in-notebook 1s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.notebook-img:hover {
+  cursor: pointer;
+}
+
+.pen-img {
+  position: absolute;
+  display: block;
+  top: 122px;
+  left: 23px;
+  width: 48px;
+  height: 77px;
+  background-image: url('../img/pen.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  animation: bounce-in-pen 1s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.pen-img:hover {
+  cursor: pointer;
+}
+
+.clicked-item {
+  opacity: 0.2;
+  pointer-events: none;
+  cursor: default;
+}
+
+.backpack-img {
+  position: absolute;
+  display: block;
+  top: 120px;
+  width: 292px;
+  height: 383px;
+  background-image: url('../img/backpack.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+  animation: fade-inDown-backpack 1s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.backpack-img__reverse {
+  position: absolute;
+  display: block;
+  top: 230px;
+  width: 292px;
+  height: 383px;
+  background-image: url('../img/backpack.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+  animation: fade-inUp-backpack 1s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.task-img {
+  position: absolute;
+  display: block;
+  top: 225px;
+  left: 155px;
+  width: 290px;
+  height: 150px;
+  background-image: url('../img/task-text.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: shake-task 1s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.blick1-img,
+.blick2-img,
+.blick3-img {
+  position: absolute;
+  display: block;
+  width: 156px;
+  height: 156px;
+  background-image: url('../img/blick.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 3;
+  animation: fade-in-blink 2s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.blick1-img {
+  top: 120px;
+  left: 45px;
+}
+
+.blick2-img {
+  top: 315px;
+  left: -35px;
+}
+
+.blick3-img {
+  top: 280px;
+  left: 180px;
+}
+
+.hidden {
+  animation: fade-out 0.3s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.endgame-text {
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 178px;
+  height: 84px;
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: 30px;
+  text-align: center;
+  color: #444;
+  z-index: 35;
+  animation: fade-in 0.7s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.restart-btn {
+  position: absolute;
+  padding: 10px 10px;
+  top: 393px;
+  border-radius: 10px;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  color: #ffd749;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000,
+    1px -1px 0 #000;
+  z-index: 30;
+  animation: fade-inUp-btn 0.8s ease 1;
+  animation-fill-mode: forwards;
+}
+
+.restart-btn:hover {
+  cursor: pointer;
+}
+
+
+
+/* Анимации */
+
+@keyframes bounce-in-nintendo {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    transform: rotate(-12.21deg);
+  }
+}
+
+@keyframes bounce-in-pencil {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    transform: rotate(92.72deg);
+  }
+}
+
+@keyframes bounce-in-usb {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    transform: rotate(55.68deg);
+  }
+}
+
+@keyframes bounce-in-notebook {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    transform: rotate(40.82deg);
+  }
+}
+
+@keyframes bounce-in-pen {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    transform: rotate(117.55deg);
+  }
+  70% {
+    transform: scale(0.9);
+    transform: rotate(107.55deg);
+  }
+  100% {
+    transform: scale(1);
+    transform: rotate(87.55deg);
+  }
+}
+
+@keyframes fade-inDown-backpack {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 230px;
+    transform: rotate(-10.92deg);
+  }
+}
+
+@keyframes fade-inUp-backpack {
+  0% {
+    scale: 0.9;
+    transform: rotate(-10.92deg);
+  }
+  100% {
+    transform: translateY(-110px);
+  }
+}
+
+@keyframes shake-task {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-inUp-btn {
+  0% {
+    transform: translateY(110px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
